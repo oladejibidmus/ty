@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ── Surfaces ── */
+  --ui-bg: #1E1E1E;
+  --card-bg: #252526;
+  --header-bg: #2D2D30;
+  --control-bg: #3E3E42;
+
+  /* ── Borders ── */
+  --border: #27323A;
+  --border-soft: #3E3E42;
+
+  /* ── Text ── */
+  --text-main: #D4D4D4;
+  --text-dim: #858585;
+  --text-white: #FFFFFF;
+
+  /* ── Brand ── */
+  --primary: #007ACC;
+  --primary-10: rgba(0, 122, 204, 0.10);
+  --primary-20: rgba(0, 122, 204, 0.20);
+  --primary-40: rgba(0, 122, 204, 0.40);
+  --link: #1E90FF;
+
+  /* ── Semantic ── */
+  --success: #4EC9B0;
+  --success-10: rgba(78, 201, 176, 0.10);
+  --success-20: rgba(78, 201, 176, 0.20);
+  --warning: #D7BA7D;
+  --warning-10: rgba(215, 186, 125, 0.10);
+  --warning-20: rgba(215, 186, 125, 0.20);
+  --error: #F48771;
+  --error-10: rgba(244, 135, 113, 0.10);
+  --error-20: rgba(244, 135, 113, 0.20);
+
+  /* ── Typography ── */
+  --font-display: 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+
+  --fs-hero: 36px;
+  --fs-display: 28px;
+  --fs-h2: 22px;
+  --fs-h3: 18px;
+  --fs-body: 14px;
+  --fs-small: 12px;
+  --fs-label: 11px;
+  --fs-xs: 10px;
+
+  /* ── Spacing ── */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 40px;
+  --sp-8: 64px;
+
+  /* ── Radii ── */
+  --r-sm: 2px;
+  --r-card: 6px;
+  --r-modal: 8px;
+  --r-pill: 999px;
+
+  /* ── Shadows ── */
+  --shadow-blue-glow: 0 4px 14px 0 rgba(0, 122, 204, 0.39);
+  --shadow-deep-blue: 0 10px 30px -10px rgba(0, 20, 40, 0.8);
+  --shadow-modal: 0 20px 50px rgba(0, 0, 0, 0.8);
+
+  /* ── Motion ── */
+  --dur-micro: 150ms;
+  --dur-macro: 300ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+
+  /* shadcn compat */
+  --radius: 0.375rem;
+  --background: 0 0% 12%;
+  --foreground: 0 0% 83%;
+  --card: 0 0% 15%;
+  --card-foreground: 0 0% 100%;
+  --popover: 0 0% 15%;
+  --popover-foreground: 0 0% 83%;
+  --primary-shadcn: 204 100% 40%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 25%;
+  --secondary-foreground: 0 0% 83%;
+  --muted: 0 0% 25%;
+  --muted-foreground: 0 0% 52%;
+  --accent: 0 0% 25%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 14 84% 63%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 0 0% 25%;
+  --ring: 204 100% 40%;
+  --border: 0 0% 15%;
+}
+
+@layer base {
+  html {
+    background-color: var(--ui-bg);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: var(--fs-body);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-color: var(--border-soft);
+  }
+
+  body {
+    background-color: var(--ui-bg);
+    color: var(--text-main);
+  }
+}
+
+@layer utilities {
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      var(--card-bg) 25%,
+      #2D3B4D 50%,
+      var(--card-bg) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
